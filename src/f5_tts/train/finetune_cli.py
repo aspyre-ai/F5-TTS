@@ -78,8 +78,9 @@ def parse_args():
 def main():
     args = parse_args()
 
-    checkpoint_path = str(files("f5_tts").joinpath(f"../../ckpts/{args.dataset_name}"))
-
+    project_path = args.dataset_name + "_char"
+    checkpoint_path = f"{project_path}/ckpts"
+    
     # Model parameters based on experiment name
     if args.exp_name == "F5TTS_Base":
         wandb_resume_id = None
